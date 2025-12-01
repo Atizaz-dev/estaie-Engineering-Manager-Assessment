@@ -1,0 +1,33 @@
+# Example Terraform Variables
+# Copy this file to terraform.tfvars and fill in your values
+
+# Project Configuration
+project_id  = "estaie-dev"
+region      = "us-central1"
+environment = "dev"
+
+# Networking
+vpc_cidr = "10.0.0.0/24"
+
+# Database
+db_tier              = "db-custom-2-8192"  # 2 vCPU, 8GB RAM
+db_disk_size         = 100                  # GB
+db_backup_enabled    = true
+db_high_availability = false                # Set to true for production
+
+# Redis
+redis_tier          = "BASIC"               # Use STANDARD_HA for production
+redis_memory_size_gb = 4                    # GB
+
+# Cloud Run
+api_min_instances = 2
+api_max_instances = 100
+api_cpu           = "2"
+api_memory        = "2Gi"
+
+# Labels
+labels = {
+  team        = "engineering"
+  cost_center = "platform"
+}
+
